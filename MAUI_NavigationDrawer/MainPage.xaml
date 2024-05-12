@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:navigationdrawer="clr-namespace:Syncfusion.Maui.NavigationDrawer;assembly=Syncfusion.Maui.NavigationDrawer"
+             x:Class="MAUI_NavigationDrawer.MainPage">
+ 
+
+    <navigationdrawer:SfNavigationDrawer x:Name="navigationDrawer">
+
+        <navigationdrawer:SfNavigationDrawer.DrawerSettings>
+            <navigationdrawer:DrawerSettings DrawerHeaderHeight="110">
+                <navigationdrawer:DrawerSettings.DrawerHeaderView>
+                    <VerticalStackLayout Spacing="5">
+                        <Image Source="profil.png"
+                               WidthRequest="72"
+                               HeightRequest="72"
+                               VerticalOptions="Center"/>
+
+                        <Label Text="Toto Alexendre"
+                               FontAttributes="Bold"
+                               FontSize="18"
+                               HeightRequest="24"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"/>
+                    </VerticalStackLayout>
+                </navigationdrawer:DrawerSettings.DrawerHeaderView>
+                <navigationdrawer:DrawerSettings.DrawerContentView>
+                    <ListView x:Name="listView" SelectedItem="Inbox">
+                        <ListView.ItemsSource>
+                            <x:Array Type="{x:Type x:String}">
+                                <x:String>Message</x:String>
+                                <x:String>Photos</x:String>
+                                <x:String>Vidéos</x:String>
+                                <x:String>Documents</x:String>
+                                <x:String>Liens</x:String>
+                                
+                            </x:Array>
+                        </ListView.ItemsSource>
+                    </ListView>
+                </navigationdrawer:DrawerSettings.DrawerContentView>
+            </navigationdrawer:DrawerSettings>
+        </navigationdrawer:SfNavigationDrawer.DrawerSettings>
+
+
+
+
+
+        <navigationdrawer:SfNavigationDrawer.ContentView>
+            <Grid RowDefinitions="Auto, *">
+
+                <Grid ColumnDefinitions="Auto, *, Auto"
+                      BackgroundColor="#4B0082"
+                      HeightRequest="47"
+                      ColumnSpacing="10">
+
+                    <ImageButton Source="logo.jpeg"
+                                 HeightRequest="42"
+                                 WidthRequest="40"
+                                 Padding="10,5,10,5"
+                                 Clicked="ImageButton_Clicked"
+                                 />
+
+                    <Label Grid.Column="1"
+                           Text="Inbox"
+                           TextColor="white"
+                           FontSize="Large"
+                           FontAttributes="Bold"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"/>
+
+                    <Image Grid.Column="2"
+                           Source="profil.png"
+                           HeightRequest="42"
+                           WidthRequest="40"
+                           VerticalOptions="Center"
+                           />
+
+                </Grid>
+
+                <Label Grid.Row="1"
+                       Text="Inbox"
+                       FontAttributes="Bold"
+                       FontSize="Large"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"/>
+
+
+            </Grid>
+        </navigationdrawer:SfNavigationDrawer.ContentView>
+    </navigationdrawer:SfNavigationDrawer>
+
+</ContentPage>
